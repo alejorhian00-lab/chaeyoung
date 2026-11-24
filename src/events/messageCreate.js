@@ -1,5 +1,7 @@
 import { Events } from 'discord.js';
 import { handleAIChat } from '../services/aiChatService.js';
+const aiProcessed = await handleAIChat(message, client);
+if (aiProcessed) return;
 import { logger } from '../utils/logger.js';
 import { getLevelingConfig, getUserLevelData } from '../services/leveling/leveling.js';
 import { addXp } from '../services/leveling/xpSystem.js';
