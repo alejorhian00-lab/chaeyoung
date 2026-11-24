@@ -38,7 +38,10 @@ export default {
 
       await handlePrefixCommand(message, client);
 
-      await handleLeveling(message, client);
+const aiProcessed = await handleAIChat(message, client);
+if (aiProcessed) return;
+
+await handleLeveling(message, client);
     } catch (error) {
       logger.error('Error in messageCreate event:', error);
     }
